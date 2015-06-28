@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sistem Saman</string>
+    <string name="spinner_title">Pilih tempat</string>
+    <string name="spinner2_title">Pilih kesalahan</string>
+
+    <string-array name="tempat_arrays">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+
+
+    <!-- Drawer Menu Default -->
+    <string name="drawerMenuComp_textTitle">Menu</string>
+
+</resources>

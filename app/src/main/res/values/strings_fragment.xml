@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Fragment Names -->
+    <string name="fragment_names_fragment1">Fragment 1</string>
+
+    <!-- Drawer Menu -->
+    <string name="fragment_drawerMenu_text_fragment1">Pengumuman</string>
+    <string name="fragment_drawerMenu_text_fragment2">Saman</string>
+    <string name="fragment_drawerMenu_text_fragment3">Carian</string>
+    <string name="fragment_drawerMenu_text_fragment4">Rekod</string>
+    <string name="fragment_drawerMenu_text_fragment5">Statistik</string>
+
+
+    <string-array name="fragment_drawerMenu_title">
+        <item>@string/fragment_drawerMenu_text_fragment1</item>
+        <item>@string/fragment_drawerMenu_text_fragment2</item>
+        <item>@string/fragment_drawerMenu_text_fragment3</item>
+        <item>@string/fragment_drawerMenu_text_fragment4</item>
+        <item>@string/fragment_drawerMenu_text_fragment5</item>
+    </string-array>
+
+
+
+    <!-- Sectios Tabs -->
+    <string name="fragment_home_fragment1_title">Pengumuman</string>
+    <string name="fragment_home_fragment2_title">Saman</string>
+    <string name="fragment_home_fragment3_title">Carian</string>
+    <string name="fragment_home_fragment4_title">Rekod</string>
+    <string name="fragment_home_fragment5_title">Statistik</string>
+
+
+    <string-array name="fragment_home_sections_tabs_title">
+        <item>@string/fragment_home_fragment1_title</item>
+        <item>@string/fragment_home_fragment2_title</item>
+        <item>@string/fragment_home_fragment3_title</item>
+        <item>@string/fragment_home_fragment4_title</item>
+        <item>@string/fragment_home_fragment5_title</item>
+    </string-array>
+
+</resources>
