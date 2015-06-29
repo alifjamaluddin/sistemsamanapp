@@ -4,13 +4,20 @@
     android:id="@+id/fragment_home_content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/accent_material_light"
     tools:context=".Fragment_Home">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="home fragment 4"
-        android:textColor="@android:color/holo_red_dark" />
-
+        android:text="Rekod"
+        android:id="@+id/textView7"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
+
+ 

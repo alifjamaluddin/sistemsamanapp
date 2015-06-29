@@ -4,13 +4,48 @@
     android:id="@+id/fragment_home_content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/accent_material_light"
     tools:context=".Fragment_Home">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="home fragment 3"
-        android:textColor="@android:color/holo_red_dark" />
+        android:textColor="@color/primary_text_default_material_dark"
+        android:id="@+id/textView5"
+        android:text="Carian"
+        android:textSize="@dimen/abc_text_size_display_1_material" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText5"
+        android:ems="13"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/abc_edit_text_material" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText6"
+        android:ems="13"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/abc_edit_text_material" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cari"
+        android:id="@+id/button2"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/editText6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff12dd58" />
+
 
 </RelativeLayout>

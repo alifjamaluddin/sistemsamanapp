@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
 
+import br.com.halyson.materialdesign.fragment.Fragment1;
 import br.com.halyson.materialdesign.fragment.Fragment5;
 import br.com.halyson.materialdesign.fragment.RecylerViewFragment;
 import br.com.halyson.materialdesign.fragment.DefaultFragment;
@@ -43,7 +44,8 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return RecylerViewFragment.newInstance();
+//                return RecylerViewFragment.newInstance();
+                return Fragment1.newInstance();
             case 1:
                 return Fragment2.newInstance();
             case 2:

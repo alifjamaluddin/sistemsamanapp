@@ -1,11 +1,24 @@
 package br.com.halyson.materialdesign.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
+import android.widget.Toast;
+
+import com.koushikdutta.async.future.Future;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import br.com.halyson.materialdesign.R;
+import br.com.halyson.materialdesign.constants.Backend;
+import br.com.halyson.materialdesign.service.ConnectionStatus;
 
 /**
  * Created by Alif on 6/28/15.
@@ -18,24 +31,70 @@ public class SplashScreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+        ConnectionStatus cs = new ConnectionStatus(getApplicationContext());
 
-        new Handler().postDelayed(new Runnable() {
+        Boolean isInternetPresent = cs.isConnectingToInternet();
 
-            /*
-             * Showing splash screen with a timer. This will be useful when you
-             * want to show case your app logo / company
-             */
+        if(isInternetPresent){
 
-            @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                // Start your app main activity
-                Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
-                startActivity(i);
+            Future<String> stringFuture = Ion.with(getApplicationContext())
+                    .load(Backend.URL + "check_status.php")
+                    .asString()
+                    .setCallback(new FutureCallback<String>() {
+                        @Override
+                        public void onCompleted(Exception e, String result) {
+                            try {
+                                JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
+                                String json_result = json.getString("status"); // Get the string "result" inside the Json-object
+                                if (json_result.equalsIgnoreCase("success")) { // Checks if the "result"-string is equals to "ok"
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                                            startActivity(i);
+                                            finish();
+                                        }
+                                    }, SPLASH_TIME_OUT);
+                                } else {
+                                    String error = "Fail connecting server";
+                                    Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
 
-                // close this activity
-                finish();
-            }
-        }, SPLASH_TIME_OUT);
+                                }
+                            } catch (JSONException er) {
+                                er.printStackTrace();
+                            }
+                        }
+                    });
+
+
+
+        }else{
+            showDialog();
+
+        }
+
+
+
     }
+
+    private void showDialog()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Connect to wifi or quit")
+                .setCancelable(false)
+                .setPositiveButton("Connect to WIFI", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                })
+                .setNegativeButton("Quit", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
 }

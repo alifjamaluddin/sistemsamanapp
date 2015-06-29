@@ -3,18 +3,46 @@
 
     <string name="app_name">Sistem Saman</string>
     <string name="spinner_title">Pilih tempat</string>
-    <string name="spinner2_title">Pilih kesalahan</string>
+    <string name="spinner1_title">Pilih kesalahan</string>
+
+
+    <string-array name="kesalahan_arrays">
+        <item>Kesalahan 1</item>
+        <item>Kesalahan 2</item>
+        <item>Kesalahan 3</item>
+        <item>Kesalahan 4</item>
+        <item>Kesalahan 5</item>
+        <item>Kesalahan 6</item>
+        <item>Kesalahan 7</item>
+        <item>Kesalahan 8</item>
+    </string-array>
+
+    <string-array name="bulan_arrays">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Mac</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Jun</item>
+        <item>Julai</item>
+        <item>Ogos</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Disember</item>
+    </string-array>
 
     <string-array name="tempat_arrays">
-        <item>Malaysia</item>
-        <item>United States</item>
-        <item>Indonesia</item>
-        <item>France</item>
-        <item>Italy</item>
-        <item>Singapore</item>
-        <item>New Zealand</item>
-        <item>India</item>
+        <item>Tempat 1</item>
+        <item>Tempat 2</item>
+        <item>Tempat 3</item>
+        <item>Tempat 4</item>
+        <item>Tempat 5</item>
+        <item>Tempat 6</item>
+        <item>Tempat 7</item>
+        <item>Tempat 8</item>
     </string-array>
+
 
 
     <!-- Drawer Menu Default -->
