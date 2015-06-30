@@ -23,6 +23,9 @@
         <activity android:name=".activity.DetailsActivity"/>
         <activity android:name=".activity.LoginActivity"/>
         <activity android:name=".activity.HomeActivity"/>
+        <activity android:name=".activity.ResultCarianMatrik"/>
+        <activity android:name=".activity.ResultCarianPlat"/>
+
     </application>
 
 </manifest>
