@@ -1,5 +1,6 @@
 package br.com.halyson.materialdesign.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,11 +18,8 @@ import com.koushikdutta.ion.Ion;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.halyson.materialdesign.R;
+import br.com.halyson.materialdesign.activity.ViewPengumuman;
 import br.com.halyson.materialdesign.constants.Backend;
 
 /**
@@ -29,7 +27,6 @@ import br.com.halyson.materialdesign.constants.Backend;
  */
 public class Fragment1 extends Fragment {
     private ListView listview;
-    private String[] listpengumuman;
     public static Fragment1 newInstance() {
         return new Fragment1();
     }
@@ -52,11 +49,11 @@ public class Fragment1 extends Fragment {
                     @Override
                     public void onCompleted(Exception e, String result) {
                         try {
-                            JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
+                            final JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
                             String json_result = json.getString("status"); // Get the string "result" inside the Json-object
                             if (json_result.equalsIgnoreCase("success")) { // Checks if the "result"-string is equals to "ok"
 
-                                JSONArray temp = json.getJSONArray("data");
+                                JSONArray temp = json.getJSONArray("tajuk");
                                 int length = temp.length();
                                 if (length > 0) {
                                     String [] newdata = new String [length];
@@ -78,11 +75,14 @@ public class Fragment1 extends Fragment {
 
                                             // ListView Clicked item value
                                             String itemValue = (String) listview.getItemAtPosition(position);
-
-                                            // Show Alert
-                                            Toast.makeText(mViewFragment1.getContext(),
-                                                    "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
-                                                    .show();
+                                            Intent intent = new Intent(getActivity(), ViewPengumuman.class);
+                                            intent.putExtra("jsonObject", json.toString());
+                                            intent.putExtra("itemposition", itemPosition);
+                                            startActivity(intent);
+                                            // Show Alert //
+//                                            Toast.makeText(mViewFragment1.getContext(),//
+//                                                    "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)//
+//                                                    .show();
 
                                         }
 

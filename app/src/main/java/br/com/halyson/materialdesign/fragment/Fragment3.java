@@ -62,7 +62,7 @@ public class Fragment3 extends Fragment implements View.OnClickListener{
 
     public void listCarianNoMatrik(){
         strNoMatrik = noMatrik.getText().toString();
-        Toast.makeText(this.getActivity(), "No Matrik: " + strNoMatrik, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getActivity(), "No Matrik: " + strNoMatrik, Toast.LENGTH_LONG).show();
 
         Future<String> stringFuture = Ion.with(getActivity())
                 .load(Backend.URL + "view-user.php?nodaftar="+strNoMatrik)
@@ -89,7 +89,7 @@ public class Fragment3 extends Fragment implements View.OnClickListener{
 
     public void listCarianNoPlat(){
         strNoPlat = noPlat.getText().toString();
-        Toast.makeText(this.getActivity(), "No plat: " + strNoPlat, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getActivity(), "No plat: " + strNoPlat, Toast.LENGTH_LONG).show();
         //get JSON RESULT
         Future<String> stringFuture = Ion.with(getActivity())
                 .load(Backend.URL + "view-kenderaan.php?noplat="+strNoPlat)
