@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="br.com.halyson.materialdesign">
+          package="edu.ukm.sistemsaman">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -8,25 +8,25 @@
 
     <application
         android:allowBackup="true"
-        android:name=".MaterialDesignApplication"
+        android:name="edu.ukm.sistemsaman.MaterialDesignApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="br.com.halyson.materialdesign.activity.SplashScreenActivity">
+            android:name="edu.ukm.sistemsaman.activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.DetailsActivity"/>
-        <activity android:name=".activity.LoginActivity"/>
-        <activity android:name=".activity.HomeActivity"/>
-        <activity android:name=".activity.ResultCarianMatrik"/>
-        <activity android:name=".activity.ResultCarianPlat"/>
-        <activity android:name=".activity.ViewPengumuman"/>
-        <activity android:name=".activity.ViewRekod"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.DetailsActivity"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.LoginActivity"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.HomeActivity"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.ResultCarianMatrik"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.ResultCarianPlat"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.ViewPengumuman"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.ViewRekod"/>
     </application>
 
 </manifest>
