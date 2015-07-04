@@ -4,23 +4,13 @@ package br.com.halyson.materialdesign.activity;
  * Created by Alif on 6/30/15.
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import br.com.halyson.materialdesign.R;
 //{"status":"success","detailkenderaan":{"id":"4","noplat":"ASD","jenis":"MOTOR",

@@ -8,15 +8,22 @@ android:background="@color/accent_material_light"
 tools:context=".Fragment_Home">
 
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Pengumuman"
-    android:id="@+id/textView8"
-    android:textColor="@color/primary_text_default_material_dark"
-    android:textSize="@dimen/abc_text_size_display_1_material"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true" />
+<!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Pengumuman"-->
+    <!--android:id="@+id/textView8"-->
+    <!--android:textColor="@color/primary_text_default_material_dark"-->
+    <!--android:textSize="@dimen/abc_text_size_display_1_material"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true" />-->
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    </ListView>
+
 </RelativeLayout>
 

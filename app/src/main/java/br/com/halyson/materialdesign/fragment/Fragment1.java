@@ -5,13 +5,31 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.koushikdutta.async.future.Future;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.halyson.materialdesign.R;
+import br.com.halyson.materialdesign.constants.Backend;
 
 /**
  * Created by Alif on 6/30/15.
  */
 public class Fragment1 extends Fragment {
+    private ListView listview;
+    private String[] listpengumuman;
     public static Fragment1 newInstance() {
         return new Fragment1();
     }
@@ -20,7 +38,68 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mViewFragment1 = inflater.inflate(R.layout.fragment_1, container, false);
-
+        getPengumuman();
         return mViewFragment1;
+    }
+
+    private void getPengumuman(){
+        listview = (ListView)mViewFragment1.findViewById(R.id.list);
+
+        Future<String> stringFuture = Ion.with(getActivity())
+                .load(Backend.URL + "pengumuman.php")
+                .asString()
+                .setCallback(new FutureCallback<String>() {
+                    @Override
+                    public void onCompleted(Exception e, String result) {
+                        try {
+                            JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
+                            String json_result = json.getString("status"); // Get the string "result" inside the Json-object
+                            if (json_result.equalsIgnoreCase("success")) { // Checks if the "result"-string is equals to "ok"
+
+                                JSONArray temp = json.getJSONArray("data");
+                                int length = temp.length();
+                                if (length > 0) {
+                                    String [] newdata = new String [length];
+                                    for (int i = 0; i < length; i++) {
+                                        newdata[i] = temp.getString(i);
+                                    }
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(mViewFragment1.getContext(),
+                                            android.R.layout.simple_list_item_1, android.R.id.text1, newdata);
+
+                                    listview.setAdapter(adapter);
+                                    listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view,
+                                                                int position, long id) {
+
+                                            // ListView Clicked item index
+                                            int itemPosition = position;
+
+                                            // ListView Clicked item value
+                                            String itemValue = (String) listview.getItemAtPosition(position);
+
+                                            // Show Alert
+                                            Toast.makeText(mViewFragment1.getContext(),
+                                                    "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
+                                                    .show();
+
+                                        }
+
+                                    });
+                                }
+
+                            } else {
+                                // Result is NOT "OK"
+                                String error = json.getString("error");
+                                Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
+
+                            }
+                        } catch (JSONException er) {
+                            // This method will run if something goes wrong with the json, like a typo to the json-key or a broken JSON.
+                            er.printStackTrace();
+                        }
+                    }
+                });
     }
 }

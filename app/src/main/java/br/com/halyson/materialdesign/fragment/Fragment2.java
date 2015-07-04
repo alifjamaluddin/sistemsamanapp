@@ -108,7 +108,7 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
                             } else {
                                 // Result is NOT "OK"
                                 String error = json.getString("error");
-                                Toast.makeText(getActivity(), error+strTempat+strKesalahan, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
+                                Toast.makeText(getActivity(), error, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
 
                             }
                         } catch (JSONException er) {
