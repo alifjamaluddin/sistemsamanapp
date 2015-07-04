@@ -64,20 +64,33 @@ public class Fragment3 extends Fragment implements View.OnClickListener{
         strNoMatrik = noMatrik.getText().toString();
         Toast.makeText(this.getActivity(), "No Matrik: " + strNoMatrik, Toast.LENGTH_LONG).show();
 
-
-        Intent intent = new Intent(this.getActivity(), ResultCarianMatrik.class);
-        startActivity(intent);
-
+        Future<String> stringFuture = Ion.with(getActivity())
+                .load(Backend.URL + "view-user.php?nodaftar="+strNoMatrik)
+                .asString()
+                .setCallback(new FutureCallback<String>() {
+                    @Override
+                    public void onCompleted(Exception e, String result) {
+                        try {
+                            JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
+                            String json_result = json.getString("status"); // Get the string "result" inside the Json-object
+                            if (json_result.equalsIgnoreCase("success")) { // Checks if the "result"-string is equals to "ok"
+                                Intent intent = new Intent(getActivity(), ResultCarianMatrik.class);
+                                intent.putExtra("jsonObject", json.toString());
+                                startActivity(intent);
+                            } else {
+                                String error = json.getString("error");
+                            }
+                        } catch (JSONException er) {
+                            er.printStackTrace();
+                        }
+                    }
+                });
     }
 
     public void listCarianNoPlat(){
         strNoPlat = noPlat.getText().toString();
         Toast.makeText(this.getActivity(), "No plat: " + strNoPlat, Toast.LENGTH_LONG).show();
-
         //get JSON RESULT
-
-
-
         Future<String> stringFuture = Ion.with(getActivity())
                 .load(Backend.URL + "view-kenderaan.php?noplat="+strNoPlat)
                 .asString()
@@ -88,29 +101,17 @@ public class Fragment3 extends Fragment implements View.OnClickListener{
                             JSONObject json = new JSONObject(result);    // Converts the string "result" to a JSONObject
                             String json_result = json.getString("status"); // Get the string "result" inside the Json-object
                             if (json_result.equalsIgnoreCase("success")) { // Checks if the "result"-string is equals to "ok"
-                                String success = json.getString("detailkenderaan");
                                 Intent intent = new Intent(getActivity(), ResultCarianPlat.class);
                                 intent.putExtra("jsonObject", json.toString());
                                 startActivity(intent);
-//                                Toast.makeText(getActivity(), success, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
                             } else {
-                                // Result is NOT "OK"
                                 String error = json.getString("error");
-//                                Toast.makeText(getActivity(), error+strTempat+strKesalahan, Toast.LENGTH_LONG).show(); // This will show the user what went wrong with a toast
-
                             }
                         } catch (JSONException er) {
-                            // This method will run if something goes wrong with the json, like a typo to the json-key or a broken JSON.
                             er.printStackTrace();
                         }
                     }
                 });
-
-        //transfer JSON STRING to RESULT PAGE
-
-
-
-
     }
 
     public void initVar(){
