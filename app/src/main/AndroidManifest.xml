@@ -26,6 +26,7 @@
         <activity android:name=".activity.ResultCarianMatrik"/>
         <activity android:name=".activity.ResultCarianPlat"/>
         <activity android:name=".activity.ViewPengumuman"/>
+        <activity android:name=".activity.ViewRekod"/>
     </application>
 
 </manifest>
