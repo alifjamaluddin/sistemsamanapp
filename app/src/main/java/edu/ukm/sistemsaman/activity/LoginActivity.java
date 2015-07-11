@@ -52,9 +52,11 @@ public class LoginActivity extends Activity{
                             if (json_result.equalsIgnoreCase("success")) {
 
                                 int user_id = json.getInt("id");
-                                SharedPreferences.Editor editor = getSharedPreferences(Backend.MY_PREFS_NAME, MODE_PRIVATE).edit();
-                                editor.putInt("userid", user_id);
-                                editor.commit();
+
+                                Backend.USERID = user_id;
+//                                SharedPreferences.Editor editor = getSharedPreferences(Backend.MY_PREFS_NAME, MODE_PRIVATE).edit();
+//                                editor.putInt("userid", user_id);
+//                                editor.commit();
                                 Intent to_main = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(to_main);
                                 finish();

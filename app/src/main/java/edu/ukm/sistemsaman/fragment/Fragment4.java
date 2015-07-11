@@ -43,7 +43,7 @@ public class Fragment4 extends Fragment {
         listview = (ListView)mViewFragment4.findViewById(R.id.list2);
 
         Future<String> stringFuture = Ion.with(getActivity())
-                .load(Backend.URL + "list-saman.php")
+                .load(Backend.URL + "list-saman.php?id="+Backend.USERID)
                 .asString()
                 .setCallback(new FutureCallback<String>() {
                     @Override
