@@ -31,7 +31,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
 
         loadViewComponents();
         initPresenter();
-        loadSectionsTabs();
+//        loadSectionsTabs();
 
         return mViewHome;
     }

@@ -24,6 +24,11 @@ import android.support.v7.widget.Toolbar;
 
 import edu.ukm.sistemsaman.R;
 import edu.ukm.sistemsaman.constants.DrawerMenu;
+import edu.ukm.sistemsaman.fragment.Fragment1;
+import edu.ukm.sistemsaman.fragment.Fragment2;
+import edu.ukm.sistemsaman.fragment.Fragment3;
+import edu.ukm.sistemsaman.fragment.Fragment4;
+import edu.ukm.sistemsaman.fragment.Fragment5;
 import edu.ukm.sistemsaman.fragment.HomeFragment;
 import edu.ukm.sistemsaman.fragment.NavigationDrawerFragment;
 
@@ -64,19 +69,19 @@ public abstract class BaseActivity extends ActionBarActivity implements Navigati
     public void onNavigationDrawerItemSelected(int position) {
         switch (position) {
             case DrawerMenu.HOME:
-                fragmentTransaction(new HomeFragment());
+                fragmentTransaction(new Fragment1());
                 break;
             case DrawerMenu.FRAGMENT1:
-                fragmentTransaction(new HomeFragment());
+                fragmentTransaction(new Fragment2());
                 break;
             case DrawerMenu.FRAGMENT2:
-                fragmentTransaction(new HomeFragment());
+                fragmentTransaction(new Fragment3());
                 break;
             case DrawerMenu.FRAGMENT3:
-                fragmentTransaction(new HomeFragment());
+                fragmentTransaction(new Fragment4());
                 break;
             case DrawerMenu.FRAGMENT4:
-                fragmentTransaction(new HomeFragment());
+                fragmentTransaction(new Fragment5());
                 break;
         }
     }

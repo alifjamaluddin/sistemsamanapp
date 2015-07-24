@@ -64,14 +64,6 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
 
     private void getValue(){
 
-//        SharedPreferences prefs = this.getActivity().getSharedPreferences(Backend.MY_PREFS_NAME, this.getActivity().MODE_PRIVATE);
-//        String restoredText = prefs.getString("text", null);
-//        if (restoredText != null) {
-//            int intUserID = prefs.getInt("userid", 0);
-//            userID = Integer.toString(intUserID);
-//
-//        }
-
         userID = Integer.toString(Backend.USERID);
 
         idTempat = tempat.getSelectedItemPosition()+1;
