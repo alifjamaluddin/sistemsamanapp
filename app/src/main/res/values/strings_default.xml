@@ -7,14 +7,15 @@
 
 
     <string-array name="kesalahan_arrays">
-        <item>Kesalahan 1</item>
-        <item>Kesalahan 2</item>
-        <item>Kesalahan 3</item>
-        <item>Kesalahan 4</item>
-        <item>Kesalahan 5</item>
-        <item>Kesalahan 6</item>
-        <item>Kesalahan 7</item>
-        <item>Kesalahan 8</item>
+        <item>Tidak memohon kebenaran bertulis bagi pelajar yang menyimpan, memiliki atau mempunyai kenderaan motor</item>
+        <item>Memandu melebihi had laju</item>
+        <item>Tidak memandu kenderaan di atas jalan raya</item>
+        <item>Meletak kenderaan secara menghalang</item>
+        <item>Menggunakan ruang letak kereta yang dikhaskan </item>
+        <item>Membonceng motosikal melebihi dari seorang</item>
+        <item>Tidak mematuhi arahan dan isyarat lalulintas</item>
+        <item>Gagal mengemukakan lesen memandu dan kad pelajar</item>
+        <item>Halangan kepada aliran lalulintas</item>
     </string-array>
 
     <string-array name="bulan_arrays">
@@ -33,14 +34,63 @@
     </string-array>
 
     <string-array name="tempat_arrays">
-        <item>Tempat 1</item>
-        <item>Tempat 2</item>
-        <item>Tempat 3</item>
-        <item>Tempat 4</item>
-        <item>Tempat 5</item>
-        <item>Tempat 6</item>
-        <item>Tempat 7</item>
-        <item>Tempat 8</item>
+        <item>Fakulti Ekonomi dan Pengurusan</item>
+        <item>Fakulti Farmasi</item>
+        <item>Fakulti Kejuruteraan dan Alam Bina</item>
+        <item>Fakulti Pendidikan</item>
+        <item>Fakulti Pengajian Islam</item>
+        <item>Fakulti Pergigian</item>
+        <item>Fakulti Perubatan</item>
+        <item>Fakulti Sains Kesihatan</item>
+        <item>Fakulti Sains Sosial dan Kemanusiaan</item>
+        <item>Fakulti Sains dan Teknologi</item>
+        <item>Fakulti Teknologi dan Sains Maklumat</item>
+        <item>Fakulti Undang-Undang</item>
+        <item>Graduate School of Business</item>
+        <item>Institut Alam dan Tamadun Melayu (ATMA)</item>
+        <item>Institut Alam Sekitar dan Pembangunan (LESTARI)</item>
+        <item>Institut Kajian Malaysia dan Antarabangsa (IKMAS)</item>
+        <item>Institut Kejuruteraan Mikro dan Nanoelektronik (IMEN)</item>
+        <item>Institut Perubatan Biologi Molekular (UMBI)</item>
+        <item>Institut Kajian Oksidental (IKON)</item>
+        <item>Institut Biologi Sistem (INBIOSIS)</item>
+        <item>Institut Penyelidikan Tenaga Suria (SERI)</item>
+        <item>Institut Perubahan Iklim (IPI)</item>
+        <item>Institut Islam Hadhari</item>
+        <item>Institut Sel Fuel</item>
+        <item>Institut Kajian Etnik (KITA)</item>
+        <item>Institut Kajian Rantau Asia Barat (IKRAB)</item>
+        <item>Pusat Kejuruteraan Tisu</item>
+        <item>Pusat Perancangan Korporat dan Kepimpinan(PPKK)</item>
+        <item>Pusat Pengajian Umum</item>
+        <item>Pusat Pembangunan Akademik</item>
+        <item>Pusat Jaminan Kualiti</item>
+        <item>Pusat Komunikasi Korporat</item>
+        <item>Pusat Pengurusan Siswazah</item>
+        <item>Pusat Pengurusan Penyelidikan dan Instrumentasi</item>
+        <item>Pusat Akreditasi Pembelajaran</item>
+        <item>Pusat Teknologi Maklumat</item>
+        <item>Pusat Kepimpinan Wanita</item>
+        <item>Pusat PERMATApintar Negara</item>
+        <item>Pusat Pemerkasaan Remaja</item>
+        <item>Pusat Kembangan Pendidikan</item>
+        <item>Penerbit UKM</item>
+        <item>Pejabat Keselamatan dan Kesihatan Pekerjaan</item>
+        <item>Pejabat Pengurusan Risiko</item>
+        <item>Pusat Islam</item>
+        <item>Kolej Ibrahim Yaakub</item>
+        <item>Kolej Dato\' Onn</item>
+        <item>Kolej Aminuddin Baki</item>
+        <item>Kolej Ungku Omar</item>
+        <item>Kolej Burhanuddin Helmi</item>
+        <item>Kolej Rahim Kajai </item>
+        <item>Kolej Ibu Zain </item>
+        <item>Kolej Idris Al Marbawi  </item>
+        <item>Kolej Tun Syed Nasir </item>
+        <item>Kolej Tun Dr. Ismail </item>
+        <item>Kolej Keris Mas </item>
+        <item>Kolej Tun Hussein Onn </item>
+        <item>Kolej Pendeta Za\'ba </item>
     </string-array>
 
 

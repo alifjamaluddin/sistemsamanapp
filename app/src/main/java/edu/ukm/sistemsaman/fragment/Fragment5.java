@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import edu.ukm.sistemsaman.R;
-import edu.ukm.sistemsaman.activity.ViewStatictic;
+import edu.ukm.sistemsaman.activity.ViewStatistic;
 
 /**
  * Created by Alif on 6/28/15.
@@ -42,7 +42,7 @@ public class Fragment5 extends Fragment  implements View.OnClickListener {
 
     public void viewStatistic(){
         getValue();
-        Intent intent = new Intent(getActivity(), ViewStatictic.class);
+        Intent intent = new Intent(getActivity(), ViewStatistic.class);
         intent.putExtra("statURL", "http://52.74.82.42/admin/statistic.php?month="+monthVal+"&type=month");
         startActivity(intent);
     }

@@ -12,7 +12,7 @@ import edu.ukm.sistemsaman.R;
 /**
  * Created by megasap on 7/26/15.
  */
-public class ViewStatictic extends ActionBarActivity{
+public class ViewStatistic extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class ViewStatictic extends ActionBarActivity{
 
         Intent intent = getIntent();
 
-        String statictisUrl = intent.getStringExtra("statURL");
+        String statURL = intent.getStringExtra("statURL");
         WebView webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
@@ -30,6 +30,6 @@ public class ViewStatictic extends ActionBarActivity{
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
-        webView.loadUrl(statictisUrl);
+        webView.loadUrl(statURL);
     }
 }
