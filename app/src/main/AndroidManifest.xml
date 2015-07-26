@@ -27,6 +27,7 @@
         <activity android:name="edu.ukm.sistemsaman.activity.ResultCarianPlat"/>
         <activity android:name="edu.ukm.sistemsaman.activity.ViewPengumuman"/>
         <activity android:name="edu.ukm.sistemsaman.activity.ViewRekod"/>
+        <activity android:name="edu.ukm.sistemsaman.activity.ViewStatictic"/>
     </application>
 
 </manifest>

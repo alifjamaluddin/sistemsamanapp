@@ -35,32 +35,11 @@ tools:context=".Fragment_Home">
     android:layout_marginTop="10px"
     android:background="#ff12dd58"
     android:layout_below="@+id/spinner2"
+    android:onClick="viewStatistic"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true" />
 
-<Spinner
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/spinner3"
-    android:layout_marginTop="20px"
-    android:layout_below="@+id/button3"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:spinnerMode="dropdown"
-    android:entries="@array/tempat_arrays"
-    android:background="@drawable/abc_list_selector_background_transition_holo_light" />
 
-<Button
-    style="?android:attr/buttonStyleSmall"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="View"
-    android:id="@+id/button4"
-    android:layout_marginTop="10px"
-    android:background="#ff12dd58"
-    android:layout_below="@+id/spinner3"
-    android:layout_alignLeft="@+id/button3"
-    android:layout_alignStart="@+id/button3" />
 
 
 </RelativeLayout>
